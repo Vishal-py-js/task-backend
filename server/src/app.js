@@ -12,8 +12,12 @@ import { apiLimiter } from './config/rateLimit.js';
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 // Security headers
 app.use(helmet());
+
+//
 
 // Logging - use morgan in development for readable logs
 if (process.env.NODE_ENV !== 'production') app.use(morgan('dev'));

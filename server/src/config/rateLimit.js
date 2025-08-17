@@ -1,5 +1,3 @@
-// Simple rate limiters for general API and auth endpoints (bonus points).
-
 import rateLimit from 'express-rate-limit';
 
 // General API limiter (100 reqs / 15 minutes)

@@ -1,3 +1,3 @@
-// api/index.js (CommonJS)
-const app = require('../src/app');
-module.exports = app;
+import app from "../src/app.js";
+
+export default app;
