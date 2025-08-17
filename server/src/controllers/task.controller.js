@@ -25,7 +25,7 @@ export const createTask = asyncHandler(async (req, res) => {
   const parsedDue = dueDate ? new Date(dueDate) : undefined;
 
   const task = await Task.create({
-    user: new mongoose.Types.ObjectId(userId),
+    user: mongoose.Types.ObjectId(userId),
     title,
     description,
     status,
