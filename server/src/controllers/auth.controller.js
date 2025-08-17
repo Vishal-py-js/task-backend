@@ -49,6 +49,10 @@ export const login = asyncHandler(async (req, res, next) => {
     message: 'Logged in',
     data: user
   });
+  // res.json({
+  //     token,
+  //     user: { id: user._id, name: user.name, email: user.email }
+  //   });
 });
 
 /**
