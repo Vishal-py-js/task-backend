@@ -7,7 +7,8 @@ import { env } from './env.js';
 const allowedOrigins = [
   env.clientUrl,                        // from .env
   "http://localhost:5173",              // local dev
-  "https://task-fontend.onrender.com", // deployed frontend
+  "https://task-fontend.onrender.com",
+  "https://manager-bdd0d.web.app" // deployed frontend
 ];
 
 // export const corsMiddleware = cors({
