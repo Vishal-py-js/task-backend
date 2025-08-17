@@ -26,25 +26,25 @@ export const AuthProvider = ({ children }) => {
   //   }
   // }, [token]);
 
-  // useEffect(() => {
-  //   let mounted = true;
-  //   const checkSession = async () => {
-  //     try {
-  //       const res = await meApi();
-  //       if (!mounted) return;
-  //       setUser(res.data);
-  //     } catch (err) {
-  //       // not logged in or session expired
-  //       setUser(null);
-  //     } finally {
-  //       if (mounted) setLoading(false);
-  //     }
-  //   };
-  //   checkSession();
-  //   return () => {
-  //     mounted = false;
-  //   };
-  // }, []);
+  useEffect(() => {
+    let mounted = true;
+    const checkSession = async () => {
+      try {
+        const res = await meApi();
+        if (!mounted) return;
+        setUser(res.data);
+      } catch (err) {
+        // not logged in or session expired
+        setUser(null);
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    };
+    checkSession();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const register = async (payload) => {
     // payload = { name, email, password }
@@ -52,6 +52,8 @@ export const AuthProvider = ({ children }) => {
     setUser(res.data); // server returns sanitized user
     return res;
   };
+
+  console.log(user);
 
   const login = async (payload) => {
     // payload = { email, password }

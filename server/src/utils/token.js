@@ -24,7 +24,7 @@ export const verifyToken = (token) => jwt.verify(token, env.jwtSecret);
  */
 export const cookieOptions = {
   httpOnly: true,
-  sameSite: 'none',
+  sameSite: 'lax',
   secure: true,
   maxAge: (() => {
     // Convert simple forms like "1d" or "12h" to ms, fallback to 1 day.
